@@ -1,0 +1,7 @@
+- DOMContentLoaded和load的区别
+   - DOMContentLoaded事件在html文档加载完毕，并且html所引用的内联js，以及外链js的同步代码都执行完毕之后触发。
+   - load 当页面DOM结构中的js,css,图片，以及js异步加载的js，css,图片都加载完成之后，才会触发load事件。
+- 浏览器缓存机制
+  - 强缓存：不发送都服务器，直接从缓存取。状态码200  expires cache-controls
+  - 协商缓存：发送服务器，通过服务器来告诉缓存时候可用。 状态码304 last-modifies etags
+  - 

@@ -11,3 +11,6 @@
   - [文件指纹](webpack-chunk.md)
   - [代码压缩](webpack-short.md)
   - [进阶](webpack-nextlevel.md)
+
+- 速度优化
+  - [方法](speed.md)
