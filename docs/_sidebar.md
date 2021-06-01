@@ -1,6 +1,6 @@
 - JavaScript
-  - [基础](js基础.md)
-  - [代码](撸代码.md)
+  - [基础](basic.md)
+  - [代码](code.md)
 
 - Webpack
   - [简介](webpack-intro.md)

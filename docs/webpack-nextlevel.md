@@ -95,3 +95,8 @@
       ```
         devtool:'source-map'
       ```
+   - 提取公共资源
+      -  SpitChunksPlugin 具体参数配置可以看文档
+      -  用的插件 HtmlWebpackExternalsPlugin
+   - treeshaking
+      - tree shaking就是只把用到的方法打到bundle中，没用到的方法会在uglify阶段被擦除掉。必须要是ES6的语法写。
