@@ -141,7 +141,7 @@ obj[b] = 'world'
    - this关键字虽然会根据环境变化，但是它始终代表的是**调用当前函数的对象**。
 - 改变this的几种方法？
    - 箭头函数
-      - 箭头函数的this始终指向函数定义是的this,箭头函数没有this绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则this绑定的是最近一层非箭头函数的this，否则，this为undefined.
+      - 箭头函数的this始终指向函数定义时的this,箭头函数没有this绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则this绑定的是最近一层非箭头函数的this，否则，this为undefined.
    - 使用apply,call,bind
       - 区别：apply()接受两个参数，第一个是要绑定的this指向的对象，第二个是一个包含多个参数的数组。call()和apply()的区别在于第二个参数不同，call()接受多个参数列表。bind()方法创建一个新的函数，当被调用时,需要手动调用。
 
@@ -185,34 +185,35 @@ obj[b] = 'world'
 - 宏任务 script/setTimeout/setInterval/setImmediate/IO/UI rendering
 ```
    async function async1() {
-      console.log('async1 start');
+      console.log('1');
       await async2();
-      console.log('async1 end');
+      console.log('2');
    }
 
    async function async2() {
-      console.log('async2');
+      console.log('3');
    }
 
-   console.log('script start');
+   console.log('4');
 
    async1();
 
    new Promise(function(resolve) {
-      console.log('promise1');
+      console.log('5');
       resolve();
       throw new Error('error')
-      console.log('promise3');
+      console.log('6');
    }).then(function() {
-      console.log('promise2');
+      console.log('7');
    }).catch(function(){
       console.log('error');
    });
 
-   console.log('script end');
+   console.log('8');
 ```
 ```
-   同： script start /  async1 start / async2 /promise1  /  script end / async1 end
+   // 4135827
+   同： script start /  1 / async2 /promise1  /  script end / async1 end
    微： promise2 
    宏：
 ```
